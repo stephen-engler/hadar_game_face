@@ -42,8 +42,14 @@ function appendToDom(gameCollection){
     for(let game of gameCollection){
         console.log('game ', game);
         let tr =$('<tr></tr>');
-        tr.append('<td>' + game.name + '</td>');
-        tr.append('<td> '+ game.cost+'</td>');
+        if(game.isClearance){
+            tr.append('<td class = "clearance">' + game.name + '</td>');
+            tr.append('<td = "clearance"> ' + game.cost + '</td>');
+        } else {
+            tr.append('<td>' + game.name + '</td>');
+            tr.append('<td> ' + game.cost + '</td>');
+        }
+        
         $('#gameContent').append(tr);
     }
 }
