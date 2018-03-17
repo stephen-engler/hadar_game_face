@@ -5,7 +5,8 @@ const gameCollection = [];//objects with a name and a cost
 
 //configures body parser for jquery
 app.use(bodyParser.urlencoded({extended:true}));
-const PORT = 4001;
+// when using horoku set PORT to process.env.PORT || 4001
+const PORT = process.env.PORT || 4001;
 
 //serve static files
 
